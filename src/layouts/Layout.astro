@@ -1,4 +1,5 @@
 ---
+import '@fontsource/twinkle-star';
 interface Props {
 	title: string;
 }
@@ -7,7 +8,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -18,33 +19,31 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+    <img class="img-gradient" src="/bg-gradient.svg" alt="gradient" class="gradient" />
 	</body>
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+    --primary: 55, 71, 79;
+    --secondary: 158, 158, 158;
+    --accent-separtator: 217, 217, 217;
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+    font-family: "Poppins", system-ui, sans-serif;
+    scroll-behavior: smooth;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .img-gradient {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    top: -10rem;
+    z-index: -1;
+    user-select: none;
+  }
+
 </style>

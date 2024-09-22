@@ -1,0 +1,42 @@
+<header>
+  <img src="/logo.svg" alt="Logo Neurosoft.dev" />
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contactos">Contactos</a></li>
+      <li><a href="#">Nosotros</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header { 
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 1rem 2rem;
+    & img {
+      position: absolute;
+      width: 16rem;
+    }
+  }
+  nav {
+    margin: 0 auto;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  li > a {
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: rgba(var(--secondary));
+    }
+  }
+</style>

@@ -1,0 +1,112 @@
+---
+import ContactosForm from "./Contactos";
+
+---
+
+<section id="contactos">
+    <h2>Contáctanos</h2>
+    <div class="separator" />
+    <div class="container-contactos">
+      <ContactosForm />
+      <div class="separator-vertical" />
+      <div>
+        <article class="email_container">
+          <p class="email-label">Correo Electrónico:</p>
+          <a href="mailto:support@neurosoft.dev" class="email-value">support@neurosoft.dev</a>
+        </article>
+        <article class="telefono">
+          <p class="tel_label">Teléfonos:</p>
+          <div class="tel_value_container">
+            <p class="tel_value">USA: <a href="tel:+13476530431">(347) 653-0431</a></p>
+            <p class="tel_value">Rep. Dom: <a href="tel:+18294513026">(829) 451-3026</a></p>
+          </div>
+        </article>
+      </div>
+    </div>
+</section>
+
+<style>
+  section {
+    width: 100%;
+    color: white;
+    margin: 5rem 0 2.5rem 0;
+    & h2 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 50px;
+      margin: 0;
+      letter-spacing: -1px;
+    }
+  }
+  .separator {
+    background-color: #97BED2;
+    margin: 1.5rem;
+    width: 70%;
+    height: 7px;
+    border-radius: 999px;
+    margin: 0 auto;
+  }
+  .separator-vertical {
+    background-color: #97BED2;
+    margin: 0.7rem;
+    height: 100%;
+    width: 7px;
+    border-radius: 999px;
+    margin: 0 auto;
+  }
+  .container-contactos {
+    margin: 1rem auto 0;
+    background-color: rgba(217, 217, 217, 0.10);
+    display: grid;
+    grid-template-columns: 1fr 7px 1fr;
+    place-items: center;
+    gap: 2.5rem;
+    width: 90%;
+    border-radius: 30px;
+    padding: 3rem;
+  }
+  .email_container {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .email-value {
+    margin-top: -1.5rem;
+  }
+  .email-label, .tel_label {
+    font-size: 28px;
+    font-weight: 500;
+  }
+  .email-value, .tel_value {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .telefono {
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .tel_value_container {
+    margin-top: -3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

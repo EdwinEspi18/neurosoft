@@ -1,0 +1,60 @@
+---
+import CardOrigin from "./CardOrigin.astro";
+import CardInvert from "./CardInvert.astro";
+import Seccion3 from "./Seccion3.astro";
+---
+
+<section id="servicios">
+  <div class="container">
+    <h2>Conoce nuestros servicios</h2>
+    <p>Entendemos que cada proyecto es único. Por eso, trabajamos en estrecha colaboración contigo para desarrollar soluciones a medida que se adapten a tus objetivos y necesidades específicas.</p>
+    <div class="separator" />
+  </div>
+  <div class="cards">
+    <CardOrigin title="Desarrollo móvil" body="Somos arquitectos de experiencias digitales que caben en la palma de tu mano. Nuestra pasión es crear aplicaciones móviles que cautiven a tus usuarios y generen un impacto duradero. Desde la concepción de la idea hasta el despliegue en las tiendas de aplicaciones, nuestro equipo de desarrollo móvil se enfoca en la innovación y la calidad. Convierte tus conceptos en aplicaciones móviles excepcionales con nosotros." img="/mobile_dev.svg" />
+    <CardInvert title="Desarrollo web" body="Somos maestros del lenguaje digital y constructores de experiencias web excepcionales. Nuestra dedicación a la creación de páginas web va más allá de lo ordinario, ya que cada sitio que construimos es una obra maestra de diseño y funcionalidad." img="/web_dev.svg" />
+    <CardOrigin title="Inteligencia artificial" body="No solo somos desarrolladores, somos artesanos de la automatización y científicos de los datos, dedicados a transformar tu visión digital en una realidad impulsada por la inteligencia artificial. Nuestra experiencia en el mundo de los bots y la ciencia de datos nos permite crear soluciones que van más allá de lo ordinario." img="/brain-ia.svg" />
+    <CardInvert title="Desarrollo de BOT" body="Nos especializamos en dar vida a tus ideas mediante bots altamente inteligentes. Nuestra experiencia en el desarrollo de soluciones de vanguardia nos permite ofrecer mucho más que simples aplicaciones automatizadas. Estamos aquí para impulsar tu visión digital hacia un nuevo nivel de eficiencia y versatilidad" img="/chat_bot.svg" />
+    <CardOrigin title="Análisis de Datos" body="Nuestro enfoque en el análisis de datos va más allá de los números, buscamos patrones, tendencias y conocimientos ocultos en los datos que recopilamos. Con herramientas avanzadas y experiencia en la interpretación de datos, convertimos información en decisiones informadas. Descubre cómo nuestro enfoque meticuloso al análisis de datos puede transformar tu estrategia empresarial." img="/analisis_datos.svg" />
+    <CardInvert title="Minería de Datos" body="Nuestra especialidad es extraer conocimientos valiosos de conjuntos de datos complejos y aparentemente inexplorados. Con herramientas avanzadas de minería de datos y experiencia en análisis estadístico, desenterramos perspectivas ocultas que pueden impulsar tu negocio hacia el éxito. Únete a nosotros en la aventura de la minería de datos y descubre tesoros de información que pueden impulsar tu toma de decisiones estratégicas." img="/mineria_dato.svg" />
+  </div>
+  <Seccion3 />
+  </section>
+  
+<style>
+  section {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background: linear-gradient(180deg, #FFFFFF 6%, #7EA3B5 61%, #122D3A 100%);
+  }
+  .container {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-direction: column;
+    & h2 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 50px;
+      margin: 0;
+      letter-spacing: -1px;
+    }
+    & p {
+      width: 50%;
+      text-align: center;
+      font-weight: 400;
+      font-size: 20px;
+      text-wrap-style: pretty;
+    }
+  }
+  .separator {
+    background-color: #54707E;
+    margin: 0.7rem;
+    width: 70%;
+    height: 7px;
+    border-radius: 999px;
+  }
+</style>

@@ -1,0 +1,78 @@
+---
+interface Props {
+	title: string;
+	body: string;
+	img: string;
+}
+
+const { img, title, body } = Astro.props;
+---
+
+  <article class="card">
+    <div class="card-img_container">
+      <img src={img} alt="card 1" />
+    </div>
+    <div class="card-content">
+      <h2>{title}</h2>
+      <div class="separator" />
+      <p>{body}</p>
+    </div>
+  </article>
+
+  <style>
+  .card {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-direction: row-reverse;
+    border-radius: 20px;
+    background-color: rgb(var(--primary));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    padding: 30px;
+    margin: 1rem auto 0 auto;
+  }
+  .card-img_container {
+    background-color: #D9D9D9;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    & img {
+      width: 85%;
+      object-fit: contain;
+    }
+  }
+  .card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    & h2 {
+      font-weight: 700;
+      font-size: 36px;
+      margin: 0;
+
+    }
+    & p {
+      width: 90%;
+      font-weight: 400;
+      font-size: 20px;
+      text-align: center;
+      text-wrap-style: pretty;
+    }
+  }
+  .separator {
+    background-color: #96A4AB;
+    width: 70%;
+    height: 7px;
+    border-radius: 999px;
+  }
+  </style>
