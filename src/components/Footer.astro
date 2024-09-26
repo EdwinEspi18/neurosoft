@@ -1,0 +1,59 @@
+<footer>
+  <div>
+    <p class="sr-only">Neurosoft.dev</p>
+  </div>
+  <p id="footer"></p>
+  <aside>
+    <a href="https://github.com/EdwinEspi18/neurosoft.git" target="_blank" rel="noopener noreferrer">
+      <img src="/logo-github.svg" alt="github" loading="lazy" />
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <img src="/logo-linkedin.svg" alt="linkedin" loading="lazy" />
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <img src="/logo-ig.svg" alt="linkedin" loading="lazy" />
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <img src="/logo-facebook.svg" alt="linkedin" loading="lazy" />
+    </a>
+  </aside>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    background-color: white;
+  }
+  p {
+    font-weight: 700;
+    font-size: 22px;
+    color: rgb(var(--primary));
+  }
+  aside {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    & img {
+      height: 30px;
+      cursor: pointer;
+    }
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+</style>
+
+<script>
+  document.getElementById('footer')!.innerHTML = `© neurosoft.dev ${new Date().getFullYear()}`;
+</script>

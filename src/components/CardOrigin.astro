@@ -10,7 +10,7 @@ const { img, title, body } = Astro.props;
 
   <article class="card">
     <div class="card-img_container">
-      <img src={img} alt="card 1" />
+      <img src={img} alt="card 1" loading="lazy" />
     </div>
     <div class="card-content">
       <h2>{title}</h2>

@@ -7,5 +7,8 @@ import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [robotsTxt(), preact()]
+  integrations: [robotsTxt(), preact()],
+  vite: {
+    envPrefix: "EMAIL_",
+  },
 });

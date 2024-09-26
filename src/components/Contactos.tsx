@@ -1,16 +1,43 @@
-import { signal } from "@preact/signals";
+import { useState } from "preact/hooks";
 
 import "./Contactos.css";
 
 export default function ContactosForm() {
-  const text = signal("");
+  const [formData, setFormData] = useState({
+    name: "",
+    lastname: "",
+    email: "",
+    tel: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("");
 
-  function onSubmit(e: any) {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Submitted a todo");
-  }
+    setStatus("Enviando...");
+
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStatus("Message sent!");
+    } else {
+      setStatus("Failed to send message");
+    }
+  };
+  console.log(status);
   return (
-    <form className='form' onSubmit={onSubmit}>
+    <form onSubmit={handleSubmit} className='form'>
       <div className='header-form'>
         <h2>Formulario para contacto.</h2>
         <p>
@@ -23,13 +50,15 @@ export default function ContactosForm() {
           className='input-control'
           type='text'
           placeholder='Nombre'
-          value={text.value}
+          name='name'
+          onChange={handleChange}
         />
         <input
           className='input-control'
           type='text'
           placeholder='Apellido'
-          value={text.value}
+          name='lastname'
+          onChange={handleChange}
         />
       </div>
       <input
@@ -37,15 +66,22 @@ export default function ContactosForm() {
         type='email'
         autocomplete='email'
         placeholder='Correo Electrónico'
-        value={text.value}
+        name='email'
+        onChange={handleChange}
       />
       <input
         className='input-control'
         type='tel'
         placeholder='No. de teléfono'
-        value={text.value}
+        name='tel'
+        onChange={handleChange}
       />
-      <textarea className='input-textarea' placeholder='Mensaje'></textarea>
+      <textarea
+        className='input-textarea'
+        placeholder='Mensaje'
+        name='message'
+        onChange={handleChange}
+      ></textarea>
       <button type='submit' className='button-contacto'>
         Enviar
       </button>
