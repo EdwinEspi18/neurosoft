@@ -12,7 +12,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://neurosoft.vercel.app/",
-  integrations: [preact()],
+  integrations: [robotsTxt(), preact(), sitemap()],
   output: "server",
   adapter: vercel(),
 });
