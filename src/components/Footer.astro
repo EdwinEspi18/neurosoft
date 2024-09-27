@@ -20,28 +20,73 @@
 </footer>
 
 <style>
+footer {
+  display: flex;
+  justify-content: space-between; /* Cambiar a space-between para mejorar la distribución */
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  padding: 1rem 2rem; /* Añadir padding para mejor espaciado */
+  flex-wrap: wrap; /* Permitir que los elementos se ajusten en varias líneas en pantallas pequeñas */
+}
+
+p {
+  font-weight: 700;
+  font-size: 20px; /* Ajustar tamaño de fuente */
+  color: rgb(var(--primary));
+}
+
+aside {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+aside img {
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Media Queries para hacer el footer responsive */
+
+/* Ajustes para tablets */
+@media (max-width: 1024px) {
   footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 1rem;
-    background-color: white;
+    flex-direction: column; /* Cambiar a disposición vertical en tablets */
+    gap: 1.5rem; /* Aumentar el espacio entre elementos */
   }
-  p {
-    font-weight: 700;
-    font-size: 22px;
-    color: rgb(var(--primary));
-  }
+
   aside {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    & img {
-      height: 30px;
-      cursor: pointer;
-    }
+    justify-content: center; /* Centrar los íconos sociales */
   }
-  .sr-only {
+
+  p {
+    font-size: 18px; /* Reducir tamaño de fuente */
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column; /* Disposición vertical en pantallas pequeñas */
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  p {
+    font-size: 16px; /* Reducir aún más el tamaño de la fuente */
+    text-align: center;
+  }
+
+  aside {
+    justify-content: center; /* Centrar los íconos sociales */
+  }
+
+  aside img {
+    height: 25px; /* Reducir el tamaño de los íconos */
+  }
+}
+.sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -52,6 +97,22 @@
     white-space: nowrap;
     border-width: 0;
   }
+/* Ajustes para pantallas muy pequeñas (móviles pequeños) */
+@media (max-width: 480px) {
+  footer {
+    padding: 1rem;
+  }
+
+  p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  aside img {
+    height: 20px; /* Reducir el tamaño de los íconos en pantallas muy pequeñas */
+  }
+}
+
 </style>
 
 <script>

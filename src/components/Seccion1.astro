@@ -51,4 +51,35 @@ import { Image } from 'astro:assets';
     text-align: start;
     text-wrap-style: pretty;
   }
+
+  @media (max-width: 768px) {
+  section h2 {
+    padding: 0 1.5rem;
+    font-size: 28px; /* Reducir el tamaño de la fuente en h2 */
+  }
+
+  .separator {
+    width: 80%; /* Ajustar el ancho del separador */
+    height: 5px; /* Reducir la altura del separador */
+  }
+
+  .card {
+    flex-direction: column; /* Apilar los elementos verticalmente */
+    width: 90%; /* Reducir el ancho de la tarjeta en móviles */
+    padding: 15px; /* Reducir el padding */
+  }
+
+  .card img {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+  }
+
+  .card p {
+    padding-left: 0; /* Eliminar el padding izquierdo */
+    font-size: 20px; /* Reducir el tamaño de la fuente */
+    text-align: center; /* Centrar el texto para móviles */
+    text-wrap-style: balance;
+  }
+}
 </style>

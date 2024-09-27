@@ -1,31 +1,38 @@
 import { createTransport } from "nodemailer";
 
 export async function POST({ request }: { request: Request }) {
-  const { name, email, message } = await request.json();
+  const { name, lastname, email, tel, message } = await request.json();
 
+  console.log({
+    user: import.meta.env.EMAIL_USER,
+    pas: import.meta.env.EMAIL_PASS,
+  });
   const transporter = createTransport({
     service: "gmail",
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: import.meta.env.EMAIL_USER,
+      pass: import.meta.env.EMAIL_PASS,
     },
   });
 
   try {
     await transporter.sendMail({
       from: email,
-      to: "tu_correo@example.com",
-      subject: `Nuevo mensaje de contacto de ${name}`,
-      text: message,
+      to: import.meta.env.EMAIL_USER,
+      subject: `Nuevo mensaje de contacto de ${name} ${lastname}`,
+      text: `${message} \n\n ${tel}`,
     });
 
-    return new Response(JSON.stringify({ status: "Email sent" }), {
+    return new Response(JSON.stringify({ mesage: "Mensaje enviado!" }), {
       status: 200,
     });
   } catch (error) {
     console.error(error);
-    return new Response(JSON.stringify({ status: "Error sending email" }), {
-      status: 500,
-    });
+    return new Response(
+      JSON.stringify({ mesage: "Error al enviar el mensaje" }),
+      {
+        status: 500,
+      }
+    );
   }
 }

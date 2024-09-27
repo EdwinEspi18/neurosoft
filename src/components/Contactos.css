@@ -6,29 +6,32 @@
   gap: 1rem;
   align-items: center;
   justify-content: space-between;
+  padding: 1rem; /* Añadido padding para un mejor espaciado en dispositivos pequeños */
 }
+
 .header-form {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  & h2 {
-    margin: 0;
-    text-align: center;
-    font-size: 28px;
-    font-weight: 500;
-    letter-spacing: -1px;
-  }
-  & p {
-    margin-top: -0rem;
-    text-align: center;
-    width: 70%;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 300;
-    text-wrap-style: pretty;
-  }
+}
+
+.header-form h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 24px; /* Tamaño ajustado */
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.header-form p {
+  margin-top: 0;
+  text-align: center;
+  width: 100%; /* Asegura que el texto ocupe el ancho completo en móviles */
+  font-size: 16px; /* Tamaño ajustado para ser responsive */
+  font-weight: 300;
+  text-wrap-style: pretty;
 }
 
 .form-control-fullname {
@@ -36,10 +39,12 @@
   width: 100%;
   justify-content: space-between;
   gap: 1rem;
-  & input {
-    flex: 1;
-  }
 }
+
+.form-control-fullname input {
+  flex: 1;
+}
+
 .input-control {
   color: white;
   background-color: rgba(255, 255, 255, 0.1);
@@ -47,17 +52,20 @@
   padding: 15px;
   border-radius: 15px;
   width: 100%;
-  font-size: 18px;
+  font-size: 16px; /* Tamaño ajustado para ser responsive */
   font-weight: 300;
-  &::placeholder {
-    color: #b0b0b0;
-    font-weight: 700;
-  }
-  &:focus {
-    outline: none;
-    outline: 3px solid rgb(var(--primary));
-  }
 }
+
+.input-control::placeholder {
+  color: #b0b0b0;
+  font-weight: 700;
+}
+
+.input-control:focus {
+  outline: none;
+  outline: 3px solid rgb(var(--primary));
+}
+
 .input-textarea {
   color: white;
   height: 150px;
@@ -67,17 +75,20 @@
   border-radius: 15px;
   width: 100%;
   padding: 1rem;
-  font-size: 18px;
+  font-size: 16px; /* Tamaño ajustado */
   font-weight: 300;
-  &::placeholder {
-    color: #b0b0b0;
-    font-weight: 700;
-  }
-  &:focus {
-    outline: none;
-    outline: 3px solid rgb(var(--primary));
-  }
 }
+
+.input-textarea::placeholder {
+  color: #b0b0b0;
+  font-weight: 700;
+}
+
+.input-textarea:focus {
+  outline: none;
+  outline: 3px solid rgb(var(--primary));
+}
+
 .button-contacto {
   width: 100%;
   padding: 1rem;
@@ -93,4 +104,80 @@
   &:hover {
     background-color: rgb(var(--primary));
   }
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+/* Media queries para responsividad */
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 1024px) {
+  .header-form h2 {
+    font-size: 22px; /* Tamaño de fuente reducido */
+  }
+
+  .header-form p {
+    font-size: 15px;
+    width: 90%; /* Asegura que el texto ocupe el ancho completo en tablets */
+  }
+
+  .input-control,
+  .input-textarea {
+    font-size: 16px; /* Tamaño ajustado para tablets */
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .header-form h2 {
+    font-size: 20px; /* Tamaño de fuente reducido */
+  }
+
+  .header-form p {
+    font-size: 14px; /* Tamaño ajustado */
+    width: 100%;
+  }
+
+  .input-control,
+  .input-textarea {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .button-contacto {
+    font-size: 14px;
+    padding: 0.8rem;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .header-form h2 {
+    font-size: 18px;
+  }
+
+  .header-form p {
+    font-size: 13px;
+  }
+
+  .input-control,
+  .input-textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .button-contacto {
+    font-size: 14px;
+    padding: 0.7rem;
+  }
+}
+.error {
+  background-color: firebrick;
+  padding: 0.5rem;
+  border-radius: 30px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
 }

@@ -20,7 +20,7 @@ const { img, title, body } = Astro.props;
   </article>
 
   <style>
-  .card {
+ /*  .card {
     color: white;
     display: flex;
     align-items: center;
@@ -74,5 +74,107 @@ const { img, title, body } = Astro.props;
     width: 70%;
     height: 7px;
     border-radius: 999px;
+  } */
+.card {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-direction: row-reverse; /* Mantener el orden en pantallas grandes */
+  border-radius: 20px;
+  background-color: rgb(var(--primary));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Ajuste del ancho para adaptarse mejor a pantallas más pequeñas */
+  padding: 20px; /* Ajustar el padding para móviles */
+  margin: 1rem auto;
+}
+
+.card-img_container {
+  background-color: #D9D9D9;
+  width: 300px; /* Ajuste del tamaño de la imagen para pantallas pequeñas */
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}
+
+.card-img_container img {
+  width: 85%;
+  object-fit: contain;
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-content h2 {
+  font-weight: 700;
+  font-size: 28px; /* Ajuste del tamaño de la fuente para ser responsive */
+  margin: 0;
+}
+
+.card-content p {
+  width: 90%;
+  font-weight: 400;
+  font-size: 18px; /* Ajuste del tamaño de la fuente para ser responsive */
+  text-align: center;
+  text-wrap-style: pretty;
+}
+
+.separator {
+  background-color: #96A4AB;
+  width: 70%;
+  height: 7px;
+  border-radius: 999px;
+}
+
+/* Media Queries para hacer el diseño responsive */
+@media (max-width: 1024px) {
+  .card {
+    flex-direction: column; /* Cambiar a disposición vertical en pantallas medianas */
+    width: 85%;
+    padding: 20px;
   }
-  </style>
+
+  .card-img_container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .card-content h2 {
+    font-size: 24px; /* Ajustar el tamaño del título en tablets */
+  }
+
+  .card-content p {
+    font-size: 16px; /* Ajustar el tamaño del texto en tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    width: 80%; /* Ocupa todo el ancho en pantallas pequeñas */
+    padding: 15px;
+  }
+
+  .card-img_container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .card-content h2 {
+    font-size: 22px;
+  }
+
+  .card-content p {
+    font-size: 15px;
+  }
+}
+</style>

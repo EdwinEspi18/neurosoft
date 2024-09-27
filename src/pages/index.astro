@@ -8,7 +8,7 @@ import Seccion2 from '../components/Seccion2.astro';
 <Layout title="neurosoft.dev">
   <NavBar />
   <main>
-    <section>
+    <section class="init">
       <h1>Impulsa tu <strong>Presencia Digital</strong></h1>
       <ul class="typing-container">
         <li class="typing-word active">Bot de WhatsApp</li>
@@ -20,7 +20,7 @@ import Seccion2 from '../components/Seccion2.astro';
         <li class="typing-word">Minería de Datos</li>
       </ul>
       <h2>Hazlo con nosotros</h2>
-      <button>Contactanos</button>
+      <button id="btn-contact">Contactanos</button>
     </section>
     <img src="/arrow-down.svg" alt="arrow down"  />
     <Seccion1 />
@@ -29,7 +29,8 @@ import Seccion2 from '../components/Seccion2.astro';
 </Layout>
 
 <style>
-  section {
+  .init {
+    padding-top: 6.5rem;
     width: 50%;
     margin: 0 auto;
     display: flex;
@@ -136,9 +137,50 @@ import Seccion2 from '../components/Seccion2.astro';
   opacity: 0;
   transform: translateY(-100%);
 }
+
+@media (max-width: 768px) {
+  .init {
+    padding-top: 10rem;
+    width: 90%; /* Reducir el ancho para móviles */
+  }
+
+  section h1 {
+    font-size: 40px; /* Ajustar el tamaño de fuente */
+    margin-top: 2rem;
+  }
+
+  section h2 {
+    font-size: 24px; /* Ajustar el tamaño de fuente */
+  }
+
+  section button {
+    padding: 0.75rem 1.25rem; /* Reducir el tamaño del botón */
+    font-size: 14px; /* Reducir la fuente del botón */
+  }
+
+  main {
+    gap: 2rem; /* Reducir el espacio entre los elementos */
+  }
+
+  main img {
+    width: 25px;
+  }
+
+  .typing-container {
+    width: 100%; /* Asegurar que el contenedor ocupe todo el ancho */
+  }
+
+  .typing-word {
+    font-size: 20px; /* Reducir el tamaño de la fuente */
+  }
+}
 </style>
 
 <script>
+  const btn = document.getElementById("btn-contact")!;
+  btn.addEventListener("click", function() {
+    window.location.href = "#contactos";
+  });
 const words = document.querySelectorAll('.typing-word');
 let currentIndex = 0;
 

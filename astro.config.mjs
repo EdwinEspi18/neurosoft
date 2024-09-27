@@ -11,4 +11,5 @@ export default defineConfig({
   vite: {
     envPrefix: "EMAIL_",
   },
+  output: "server",
 });
