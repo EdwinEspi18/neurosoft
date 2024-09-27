@@ -10,8 +10,8 @@ export async function POST({ request }: { request: Request }) {
   const transporter = createTransport({
     service: "gmail",
     auth: {
-      user: import.meta.env.EMAIL_USER,
-      pass: import.meta.env.EMAIL_PASS,
+      user: import.meta.env.EMAIL_USER ?? process.env.EMAIL_USER,
+      pass: import.meta.env.EMAIL_PASS ?? process.env.EMAIL_PASS,
     },
   });
 
