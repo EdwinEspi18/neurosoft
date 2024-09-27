@@ -35,7 +35,7 @@ section {
 section h2 {
   text-align: center;
   font-weight: 700;
-  font-size: 40px; /* Ajuste de tamaño de fuente */
+  font-size: 40px;
   margin: 0;
   letter-spacing: -1px;
 }
@@ -61,7 +61,7 @@ section h2 {
   margin: 1rem auto 0;
   background-color: rgba(217, 217, 217, 0.10);
   display: grid;
-  grid-template-columns: 1fr 7px 1fr; /* Diseño de dos columnas */
+  grid-template-columns: 1fr 7px 1fr;
   place-items: center;
   gap: 2.5rem;
   width: 90%;
@@ -110,25 +110,20 @@ a:hover {
   gap: 1rem;
   align-items: center;
   justify-content: center;
-}
-
-/* Media queries para hacer el diseño responsive */
-
-/* Ajustes para tablets */
-@media (max-width: 1024px) {
+}@media (max-width: 1024px) {
   section h2 {
-    font-size: 36px; /* Ajuste de tamaño de fuente para tablets */
+    font-size: 36px;
   }
 
   .container-contactos {
-    grid-template-columns: 1fr; /* Cambia a una columna */
+    grid-template-columns: 1fr;
     gap: 2rem;
 
     padding: 2rem;
   }
 
   .separator-vertical {
-    display: none; /* Oculta la línea vertical */
+    display: none;
   }
 
   .email_container, .telefono {
@@ -136,7 +131,7 @@ a:hover {
   }
 
   .email-label, .tel_label {
-    font-size: 24px; /* Reducir tamaño de texto */
+    font-size: 24px;
   }
 
   .email-value, .tel_value {
@@ -144,24 +139,23 @@ a:hover {
   }
 }
 
-/* Ajustes para móviles */
 @media (max-width: 768px) {
   section h2 {
-    font-size: 28px; /* Ajuste de tamaño de fuente para móviles */
+    font-size: 28px;
   }
 
   .container-contactos {
-    grid-template-columns: 1fr; /* Cambia a una columna */
+    grid-template-columns: 1fr;
     width: 80%;
     padding: 1.5rem;
   }
 
   .email-label, .tel_label {
-    font-size: 20px; /* Reducir tamaño de texto */
+    font-size: 20px; 
   }
 
   .email-value, .tel_value {
-    font-size: 20px; /* Reducir tamaño de texto */
+    font-size: 20px;
   }
 
   .email_container, .telefono {
@@ -169,7 +163,7 @@ a:hover {
   }
 
   .separator-vertical {
-    display: none; /* Oculta la línea vertical */
+    display: none;
   }
 
   a {
