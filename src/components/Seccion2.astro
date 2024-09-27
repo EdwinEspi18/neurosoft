@@ -59,4 +59,18 @@ import Footer from "./Footer.astro";
     height: 7px;
     border-radius: 999px;
   }
+  @media (max-width: 768px) {
+  .container h2 {
+    font-size: 30px; /* Ajuste del tamaño de fuente para pantallas pequeñas */
+  }
+
+  .container p {
+    width: 90%; /* Ajustar el ancho del párrafo para móviles */
+    font-size: 14px; /* Ajuste del tamaño de la fuente */
+  }
+
+  .separator {
+    width: 80%; /* Ajustar el ancho del separador para pantallas pequeñas */
+  }
+}
 </style>
