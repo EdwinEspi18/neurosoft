@@ -7,14 +7,15 @@ import preact from "@astrojs/preact";
 
 import vercel from "@astrojs/vercel/serverless";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [robotsTxt(), preact()],
-
-  vite: {
-    envPrefix: "EMAIL_",
-  },
-
+  site: "https://neurosoft.vercel.app/",
+  integrations: [robotsTxt(), preact(), sitemap()],
+  /* vite: {
+    envPrefix: "EMAIL_"
+  }, */
   output: "server",
   adapter: vercel(),
 });
