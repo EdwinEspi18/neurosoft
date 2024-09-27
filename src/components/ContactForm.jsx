@@ -1,5 +1,4 @@
 import { useState } from "preact/hooks";
-import { h } from "preact";
 
 import "./Contactos.css";
 
