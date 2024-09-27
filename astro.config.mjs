@@ -13,9 +13,9 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://neurosoft.vercel.app/",
   integrations: [robotsTxt(), preact(), sitemap()],
-  /* vite: {
-    envPrefix: "EMAIL_"
-  }, */
+  vite: {
+    envPrefix: "EMAIL_",
+  },
   output: "server",
   adapter: vercel(),
 });
